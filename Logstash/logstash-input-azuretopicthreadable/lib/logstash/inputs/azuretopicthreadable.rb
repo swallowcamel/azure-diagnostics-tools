@@ -42,7 +42,7 @@ class LogStash::Inputs::Azuretopicthreadable < LogStash::Inputs::Base
     if @access_key_name
         # SAS key used
         signer = Azure::ServiceBus::Auth::SharedAccessSigner.new
-        sb_host = "https://#{Azure.sb_namespace}.servicebus.windows.net"
+        sb_host = "https://#{Azure.sb_namespace}.servicebus.chinacloudapi.cn"
         azure_service_bus = Azure::ServiceBus::ServiceBusService.new(sb_host, { signer: signer})
     else
         # ACS key
